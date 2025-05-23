@@ -1,0 +1,23 @@
+['MASTER']
+
+[MESSAGES CONTROL]
+
+disable=
+    missing-module-docstring,
+    line-too-long, # Lines length checked and controlled by black extension
+    no-name-in-module, # Non-compatible with .pyi files in actual version. It's checked by mypy (20.07.2023)
+    no-member, # Non-compatible with .pyi files in actual version. It's checked by mypy
+    too-few-public-methods,
+    fixme,
+
+[GOOD NAMES]
+
+good-names=
+    id,
+    e,
+    SERVICE_NAMES,
+
+[SIMILARITIES]
+
+ignore-imports=yes
+ignore-signatures=yes

@@ -1,0 +1,47 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "[pants] export virtualenv",
+        "type": "shell",
+        "command": "pants export --export-resolve=\"['python-default', 'mypy']\""
+      },
+      {
+        "label": "[pants] test",
+        "type": "shell",
+        "command": "pants test ::"
+      },
+      {
+        "label": "[pants] test debug",
+        "type": "shell",
+        "command": "pants test --debug-adapter ::"
+      },
+      {
+        "label": "[pants] lint",
+        "type": "shell",
+        "command": "pants lint ::"
+      },
+      {
+        "label": "[pants] format",
+        "type": "shell",
+        "command": "pants fmt ::"
+      },
+      {
+        "label": "[pants] typecheck",
+        "type": "shell",
+        "command": "pants check ::"
+      },
+      {
+        "label": "[pants] tailor",
+        "type": "shell",
+        "command": "pants tailor ::"
+      },
+      {
+        "label": "[pants] generate lockfiles",
+        "type": "shell",
+        "command": "pants generate-lockfiles ::"
+      },
+    ]
+  }

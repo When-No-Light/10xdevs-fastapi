@@ -1,0 +1,8 @@
+# Pants workspace files
+/.pants.*
+/dist/
+/.pids
+/.buf.cache
+.openapi_schemas
+__pycache__/
+*.py[cod]

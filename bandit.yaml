@@ -1,0 +1,4 @@
+assert_used:  # avoid B101 in test files
+  skips: ['*_test.py', '*test_*.py']
+
+skips: ['B106'] # TODO

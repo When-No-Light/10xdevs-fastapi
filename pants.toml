@@ -1,0 +1,68 @@
+[GLOBAL]
+pants_version = "2.26.0"
+
+backend_packages = [
+  "pants.backend.docker",
+  "pants.backend.python",
+  "pants.backend.experimental.python",
+  "pants.backend.python.lint.bandit",
+  "pants.backend.python.lint.docformatter",
+  "pants.backend.python.lint.isort",
+  "pants.backend.python.lint.black",
+  "pants.backend.python.typecheck.mypy",
+  "pants.backend.python.lint.pylint",  
+]
+
+pants_ignore = [
+  "infra",
+  ".git",
+]
+
+concurrent = false
+
+[python]
+enable_resolves=true
+interpreter_constraints = ["CPython==3.12.*"]
+
+[python.resolves]
+python-default = "3rdparty/lockfiles/python-default.lock"
+mypy = "3rdparty/lockfiles/mypy.lock"
+
+[generate-lockfiles]
+diff = true
+
+[mypy]
+install_from_resolve = "mypy"
+requirements = ["//3rdparty:mypy"]
+
+
+# Linting configuration
+
+[pylint]
+config = "pylint.pylintrc"
+
+[bandit]
+config = "bandit.yaml"
+
+[isort]
+args = ["-v"]
+config = [".isort.cfg"]
+
+# Tests configuration
+
+[test]
+output = "all"
+use_coverage = true
+report = true
+
+[pytest]
+args = ["-v"]
+
+[coverage-py]
+filter = ["src/python"]
+
+[tailor]
+ignore_paths = ["docs/**", "infra/**", "tools/**", "src/javascript/**"]
+
+[anonymous-telemetry]
+enabled = false
