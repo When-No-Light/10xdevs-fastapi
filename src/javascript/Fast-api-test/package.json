@@ -1,47 +1,43 @@
 {
-    "name": "fast-api-test",
-    "version": "0.0.1",
-    "description": "A Quasar Project",
-    "productName": "UI for fast api testing",
-    "author": "Vadym Stakhov <vadym.stakhov@rd.technosystem.pl>",
-    "private": true,
-    "scripts": {
-        "lint": "eslint --max-warnings=0 --ext .js,.ts,.vue ./",
-        "lint:fix": "eslint --fix --ext .js,.ts,.vue ./",
-        "test": "echo \"No test specified\" && exit 0",
-        "dev": "quasar dev",
-        "build": "quasar build",
-        "generate-client": "openapi --input ./.openapi_schemas/fast_api_test.json --output ./src/client --client axios --useOptions --useUnionTypes",
-        "fmt": "pprettier --write \"src/**/*.{js,jsx,ts,tsx,json,vue}\" \"./*.{js,jsx,ts,tsx,json,vue}\" \"!src/client/**/*.{js,jsx,ts,tsx,json,vue}\"",
-        "format-check": "pprettier --check \"src/**/*.{js,jsx,ts,tsx,json,vue}\" \"./*.{js,jsx,ts,tsx,json,vue}\" \"!src/client/**/*.{js,jsx,ts,tsx,json,vue}\""
-    },
-    "dependencies": {
-        "@mixer/parallel-prettier": "^2.0.3",
-        "@quasar/extras": "^1.16.4",
-        "axios": "^1.6.5",
-        "quasar": "^2.8.0",
-        "vue": "^3.2.29",
-        "vue-request": "^2.0.4",
-        "vue-router": "^4.0.12"
-    },
-    "devDependencies": {
-        "@quasar/app-vite": "^1.4.3",
-        "@types/node": "^12.20.21",
-        "@typescript-eslint/eslint-plugin": "^5.10.0",
-        "@typescript-eslint/parser": "^5.10.0",
-        "autoprefixer": "^10.4.2",
-        "eslint": "^8.2.0",
-        "eslint-config-prettier": "^8.1.0",
-        "eslint-config-airbnb-base": "^15.0.0",
-        "eslint-plugin-import": "^2.25.2",
-        "eslint-plugin-vue": "^9.0.0",
-        "openapi-typescript-codegen": "^0.27.0",
-        "prettier": "^2.5.1",
-        "typescript": "^4.5.4"
-    },
-    "engines": {
-        "node": "^20 || ^18 || ^16",
-        "npm": ">= 6.13.4",
-        "yarn": ">= 1.21.1"
-    }
+  "name": "quasar-project",
+  "version": "0.0.1",
+  "description": "A Quasar Project",
+  "productName": "Quasar App",
+  "author": "Vadym Stakhov <vadym.stakhov@rd.technosystem.pl>",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint -c ./eslint.config.js \"./src*/**/*.{ts,js,cjs,mjs,vue}\"",
+    "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
+    "test": "echo \"No test specified\" && exit 0",
+    "dev": "quasar dev",
+    "build": "quasar build",
+    "postinstall": "quasar prepare"
+  },
+  "dependencies": {
+    "@quasar/extras": "^1.16.4",
+    "quasar": "^2.16.0",
+    "vue": "^3.4.18",
+    "vue-router": "^4.0.12"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "eslint": "^9.14.0",
+    "eslint-plugin-vue": "^9.30.0",
+    "globals": "^15.12.0",
+    "vue-tsc": "^2.0.29",
+    "@vue/eslint-config-typescript": "^14.4.0",
+    "vite-plugin-checker": "^0.9.0",
+    "@vue/eslint-config-prettier": "^10.1.0",
+    "prettier": "^3.3.3",
+    "@types/node": "^20.5.9",
+    "@quasar/app-vite": "^2.1.0",
+    "autoprefixer": "^10.4.2",
+    "typescript": "~5.5.3"
+  },
+  "engines": {
+    "node": "^28 || ^26 || ^24 || ^22 || ^20 || ^18",
+    "npm": ">= 6.13.4",
+    "yarn": ">= 1.21.1"
+  }
 }
